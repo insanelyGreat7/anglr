@@ -1,0 +1,32 @@
+<section class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <form [formGroup]="postForm" (ngSubmit)="validatePostForm()">
+                <fieldset>
+                    <legend>Create Post</legend>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" name="title" formControlName="title" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['title'].errors}" />
+                        <div *ngIf="submitted && f['title'].errors" class="invalid-feedback">
+                            <div *ngIf="f['title'].errors['required']">Title field should not be empty!</div>
+                            <div *ngIf="f['title'].errors['minlength']">Title should be minimum 6 characters!</div>
+                            <div *ngIf="f['title'].errors['maxlength']">Title should be maximum 8 characters!</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Body</label>
+                        <input type="text" name="body" formControlName="body" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['body'].errors}" />
+                        <div *ngIf="submitted && f['body'].errors" class="invalid-feedback">
+                            <div *ngIf="f['body'].errors['required']">Body field should not be empty!</div>
+                        </div>
+                    </div>
+                    <div class="form-group my-3">
+                        <input type="submit" class="btn btn-danger float-end my-3" value="Create a new post">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>

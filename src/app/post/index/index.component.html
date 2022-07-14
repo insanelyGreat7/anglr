@@ -1,0 +1,30 @@
+<section class="continer">
+    <div class="row">
+        <h1 class="bg-danger">List of Posts
+            <button class="btn btn-primary" routerLink="/post/create-new">New Post</button>
+        </h1>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Body</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let post of postList">
+                    <th scope="row">{{post.id}}</th>
+                    <td>{{post.title}}</td>
+                    <td>{{post.body}}</td>
+                    <td>
+                        <a href="#" [routerLink]="['/post/',post.id,'edit']" class="btn btn-info"> Edit</a>
+                        <a href="#" class="btn btn-danger"> Delete</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</section>
