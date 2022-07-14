@@ -1,0 +1,35 @@
+<section class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <form (ngSubmit)="validateRegisterForm()" #rf="ngForm">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input 
+                            type="text" 
+                            name="fname" 
+                            class="form-control"
+                            required
+                            minlength="6"
+                            maxlength="8"
+                            ngModel
+                            #firstName="ngModel"
+                         />
+                         <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+                            <div *ngIf="firstName.errors && firstName.errors['required']">Firstname field should not be empty</div>
+                            <div *ngIf="firstName.errors && firstName.errors['minlength']">Firstname should be minimum of 6 charaters!</div>
+                            <div *ngIf="firstName.errors && firstName.errors['maxlength']">Firstname should be maximum of 8 charaters!</div>
+                         </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" [class.disabled]="!rf.valid">Register</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124412.65177554426!2d77.53270546249998!3d12.97854360000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae114b56572ee1%3A0x1cbbbb1b466c501c!2sMicro%20Focus%20Software%20Development%20Center!5e0!3m2!1sen!2sin!4v1657687755953!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>

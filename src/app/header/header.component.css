@@ -1,0 +1,20 @@
+header{
+    display: grid
+    ;
+    grid-template-columns: 20% 80%;
+    background-color: azure;
+    padding: 15px;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+}
+header li{
+    list-style: none;
+}
+header a{
+    color: red;
+    font-size: 22px;
+    text-decoration: none;
+}

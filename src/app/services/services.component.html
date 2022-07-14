@@ -1,0 +1,26 @@
+<section class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let service of serviceList">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/{{service.imgurl}}" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">{{service.title}}</h4>
+                  <p class="card-text">{{service.desc}}</p>
+                  <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row jumbtron" *ngIf="isVisible" appHighlight>
+        <div class="col-md-12">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/img_avatar1.png" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">John Doe</h4>
+                  <p class="card-text">Some example text.</p>
+                  <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</section>
